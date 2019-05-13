@@ -1,6 +1,6 @@
 /*
 Exercício de Programação de Desafios de Programação 1
-Professor Doutor Alexandre
+Professor Doutor Alexandre da Silva Freire
 
 Autores:
 Lucas Pipa Cervera                  8094403
@@ -20,12 +20,21 @@ Implementação do algoritmo de busca Naive
 
 using namespace std;
 
+
+/**
+ ** Método de busca
+ **
+ ** @param padrao: Texto padrão que estamos buscando
+ ** @param texto: Texto onde o padrão será buscado
+ **/
 bool busca(string padrao, string texto) {
     int tamanho_padrao = padrao.length();
     int tamanho_texto = texto.length();
 
     int j;
+    // Avança o padrão pelo texto, buscando-o
     for(int i=0; i<=tamanho_texto - tamanho_padrao; i++) {
+        // Verifica se encontrou
         for(j=0; j<tamanho_padrao; j++)
             if(texto[i+j] != padrao[j])
                 break;
@@ -37,6 +46,11 @@ bool busca(string padrao, string texto) {
     return false;
 }
 
+
+
+/**
+ ** Método principal da aplicação
+ **/
 int main() {
     string texto = "GEEKS FOR GEEKS";
     string padrao = "GEEK";
